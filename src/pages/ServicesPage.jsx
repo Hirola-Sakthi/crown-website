@@ -1,6 +1,8 @@
-import { useRef } from 'react'
-import { useScrollReveal } from '../hooks/useScrollReveal'
-import Testimonials from '../components/Testimonials'
+import { useRef } from "react";
+import { useScrollReveal } from "../hooks/useScrollReveal";
+import Testimonials from "../components/Testimonials";
+import { serviceDetails, serviceList } from "../data/services";
+import { Link } from "react-router-dom";
 
 /**
  * Services A page — exact replica of https://lovio.webflow.io/services/services-a
@@ -20,8 +22,8 @@ import Testimonials from '../components/Testimonials'
  * is handled by Webflow's CSS via the node-IDs on the .block-image divs.
  */
 export default function ServicesPage() {
-  const ref = useRef(null)
-  useScrollReveal(ref)
+  const ref = useRef(null);
+  useScrollReveal(ref);
 
   return (
     <div ref={ref}>
@@ -39,9 +41,12 @@ export default function ServicesPage() {
               data-hero-reveal
             />
             <div className="subtitle" data-hero-reveal>
-              Services<br />
+              Services
+              <br />
             </div>
-            <h1 className="heading-hero" data-hero-reveal>Our Services</h1>
+            <h1 className="heading-hero" data-hero-reveal>
+              Our Services
+            </h1>
             <div className="border-down margin" data-hero-reveal></div>
           </div>
         </div>
@@ -59,13 +64,23 @@ export default function ServicesPage() {
                 alt=""
                 className="icon-flower"
               />
-              <h3 className="heading">Weddings</h3>
+              <h3 className="heading">Destination Weddings & Receptions</h3>
               <p className="paragraph">
-                Purus quam elit, ligula morbi facilisis. Nisl id nisi, mattis eget elit etiam risus commodo, congue. Vitae placerat tincidunt adipiscing id porta sed. Gravida nulla mi felis gravida odio.
-                <br /><br />
-                Aliquam morbi in euismod aliquet pretium.<br />
-                Augue bibendum proin tempus non, massa aliquet. Egestas nisi ultrices curabitur.
+                Purus quam elit, ligula morbi facilisis. Nisl id nisi, mattis
+                eget elit etiam risus commodo, congue. Vitae placerat tincidunt
+                adipiscing id porta sed. Gravida nulla mi felis gravida odio.
+                <br />
+                <br />
+                Aliquam morbi in euismod aliquet pretium.
+                <br />
+                Augue bibendum proin tempus non, massa aliquet. Egestas nisi
+                ultrices curabitur.
               </p>
+              <div className="block-service">
+                <Link to={""} className="link">
+                  learn more
+                </Link>
+              </div>
             </div>
             <div
               id="w-node-bb127e2e-cfb0-af59-52fb-e7ade1277139-a31abeb8"
@@ -119,12 +134,22 @@ export default function ServicesPage() {
                 alt=""
                 className="icon-flower"
               />
-              <h3 className="heading">Event Design</h3>
+              <h3 className="heading">Birthday & Anniversary Celebrations</h3>
               <p className="paragraph">
-                Tincidunt lacus, adipiscing sed dictum turpis gravida arcu. Odio scelerisque commodo eu tincidunt odio pulvinar ullamcorper sit gravida. Nunc dui nunc, nulla sed convallis sed. Dictum venenatis facilisis ac adipiscing
-                <br /><br />
-                Aliquam suspendisse condimentum lobortis in. Augue vulputate egestas in porta fermentum nunc id arcu ultricies.
+                Tincidunt lacus, adipiscing sed dictum turpis gravida arcu. Odio
+                scelerisque commodo eu tincidunt odio pulvinar ullamcorper sit
+                gravida. Nunc dui nunc, nulla sed convallis sed. Dictum
+                venenatis facilisis ac adipiscing
+                <br />
+                <br />
+                Aliquam suspendisse condimentum lobortis in. Augue vulputate
+                egestas in porta fermentum nunc id arcu ultricies.
               </p>
+              <div className="block-service">
+                <Link to={""} className="link">
+                  learn more
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -142,12 +167,22 @@ export default function ServicesPage() {
                 alt=""
                 className="icon-flower"
               />
-              <h3 className="heading">Branding</h3>
+              <h3 className="heading">Family Get-Togethers & Reunions</h3>
               <p className="paragraph">
-                Viverra commodo eget amet ut. Nisl velit scelerisque malesuada commodo ullamcorper integer. Et vestibulum morbi.
-                <br /><br />
-                Lobortis faucibus tortor sed amet, cras. Fringilla orci cras eget consequat, ut viverra sed. Ornare faucibus nibh eget id euismod viverra ut porttitor. Augue consectetur elit consectetur nisl, et vel. Libero tellus dolor nibh diam.
+                Viverra commodo eget amet ut. Nisl velit scelerisque malesuada
+                commodo ullamcorper integer. Et vestibulum morbi.
+                <br />
+                <br />
+                Lobortis faucibus tortor sed amet, cras. Fringilla orci cras
+                eget consequat, ut viverra sed. Ornare faucibus nibh eget id
+                euismod viverra ut porttitor. Augue consectetur elit consectetur
+                nisl, et vel. Libero tellus dolor nibh diam.
               </p>
+              <div className="block-service">
+                <Link to={""} className="link">
+                  learn more
+                </Link>
+              </div>
             </div>
             <div
               id="w-node-_67dae5bd-5d11-3d93-0d20-a10fcf8b3987-a31abeb8"
@@ -173,8 +208,159 @@ export default function ServicesPage() {
         </div>
       </div>
 
+      {/* ============ 4. EVENT DESIGN — image left, text right ============ */}
+      <div className="section">
+        <div className="content">
+          <div className="w-layout-grid grid-2-columns">
+            <div className="block-image" data-reveal>
+              <div className="overflow-image">
+                <img
+                  className="image"
+                  src="/images/img_3.jpg"
+                  alt="Event Design"
+                  loading="lazy"
+                />
+              </div>
+              <img
+                src="/images/flower_2.png"
+                loading="eager"
+                alt=""
+                className="flower---b"
+              />
+            </div>
+            <div className="block-text" data-reveal>
+              <img
+                src="/images/service_icon_2.png"
+                loading="lazy"
+                width="69"
+                alt=""
+                className="icon-flower"
+              />
+              <h3 className="heading">Luxury Weekend Getaways</h3>
+              <p className="paragraph">
+                Tincidunt lacus, adipiscing sed dictum turpis gravida arcu. Odio
+                scelerisque commodo eu tincidunt odio pulvinar ullamcorper sit
+                gravida. Nunc dui nunc, nulla sed convallis sed. Dictum
+                venenatis facilisis ac adipiscing
+                <br />
+                <br />
+                Aliquam suspendisse condimentum lobortis in. Augue vulputate
+                egestas in porta fermentum nunc id arcu ultricies.
+              </p>
+              <div className="block-service">
+                <Link to={""} className="link">
+                  learn more
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ============ 5. BRANDING — text left, image right ============ */}
+      <div className="section">
+        <div className="content">
+          <div className="w-layout-grid grid-2-columns">
+            <div className="block-text" data-reveal>
+              <img
+                src="/images/service_icon_3.png"
+                loading="lazy"
+                width="69"
+                alt=""
+                className="icon-flower"
+              />
+              <h3 className="heading">Exhibitions & Fashion Shows</h3>
+              <p className="paragraph">
+                Viverra commodo eget amet ut. Nisl velit scelerisque malesuada
+                commodo ullamcorper integer. Et vestibulum morbi.
+                <br />
+                <br />
+                Lobortis faucibus tortor sed amet, cras. Fringilla orci cras
+                eget consequat, ut viverra sed. Ornare faucibus nibh eget id
+                euismod viverra ut porttitor. Augue consectetur elit consectetur
+                nisl, et vel. Libero tellus dolor nibh diam.
+              </p>
+              <div className="block-service">
+                <Link to={""} className="link">
+                  learn more
+                </Link>
+              </div>
+            </div>
+            <div
+              id="w-node-_67dae5bd-5d11-3d93-0d20-a10fcf8b3987-a31abeb8"
+              className="block-image"
+              data-reveal
+            >
+              <div className="overflow-image">
+                <img
+                  className="image"
+                  src="/images/img_1.jpg"
+                  alt="Branding"
+                  loading="lazy"
+                />
+              </div>
+              <img
+                src="/images/flower_4.png"
+                loading="eager"
+                alt=""
+                className="flower---a variant"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ============ 6. EVENT DESIGN — image left, text right ============ */}
+      <div className="section">
+        <div className="content">
+          <div className="w-layout-grid grid-2-columns">
+            <div className="block-image" data-reveal>
+              <div className="overflow-image">
+                <img
+                  className="image"
+                  src="/images/img_3.jpg"
+                  alt="Event Design"
+                  loading="lazy"
+                />
+              </div>
+              <img
+                src="/images/flower_2.png"
+                loading="eager"
+                alt=""
+                className="flower---b"
+              />
+            </div>
+            <div className="block-text" data-reveal>
+              <img
+                src="/images/service_icon_2.png"
+                loading="lazy"
+                width="69"
+                alt=""
+                className="icon-flower"
+              />
+              <h3 className="heading">Corporate Events & Conferences</h3>
+              <p className="paragraph">
+                Tincidunt lacus, adipiscing sed dictum turpis gravida arcu. Odio
+                scelerisque commodo eu tincidunt odio pulvinar ullamcorper sit
+                gravida. Nunc dui nunc, nulla sed convallis sed. Dictum
+                venenatis facilisis ac adipiscing
+                <br />
+                <br />
+                Aliquam suspendisse condimentum lobortis in. Augue vulputate
+                egestas in porta fermentum nunc id arcu ultricies.
+              </p>
+              <div className="block-service">
+                <Link to={""} className="link">
+                  learn more
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* ============ 5. TESTIMONIALS ============ */}
       <Testimonials />
     </div>
-  )
+  );
 }
