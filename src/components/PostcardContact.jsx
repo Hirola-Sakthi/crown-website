@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { Link } from 'react-router-dom'
 
 export default function PostcardContact() {
   const ref = useRef(null)
@@ -30,13 +31,12 @@ export default function PostcardContact() {
               <p className="paragraph">
                 Velit sagittis donec varius est mus donec donec. Molestie enim id amet elementum adipiscing id consectetur consectetur. Nunc aliquam.
               </p>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="button w-button"
-                onClick={(e) => e.preventDefault()}
               >
                 Let's connect
-              </a>
+              </Link>
             </div>
           </div>
 
